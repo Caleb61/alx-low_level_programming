@@ -1,27 +1,30 @@
 #include <stdio.h>
 
 /**
- * main - Prints the numbers from 0 to 99
+ * main - Prints possible combinations of two digits
  *
  * Return: Always (Success)
  */
 int main(void)
 {
-	int c, i;
+	int i, p;
 
-	c = i = '0';
-
-	for (c = '0'; c <= '9'; c++)
+	for (i = '0'; i < 100; i++)
 	{
-		for (i = '0'; i <= '9'; i++)
+		for (p = '0'; p < 100; i++)
 		{
-			putchar(c);
-			putchar(i);
-
-			if ((c != '9') || (c == '9' && i != '9'))
+			if (p > i)
 			{
-				putchar(',');
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
 				putchar(' ');
+				putchar((p / 10) + '0');
+				putchar((p % 10) + '0');
+				if (i != 98)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
